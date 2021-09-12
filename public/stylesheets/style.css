@@ -83,3 +83,13 @@ path.metascore {
 path.area {
   fill: var(--highlight);
 }
+
+text.imdb {
+  fill: var(--imdb);
+  font-size: 12px;
+}
+
+text.metascore {
+  fill: var(--metascore);
+  font-size: 12px;
+}

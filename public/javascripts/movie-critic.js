@@ -93,7 +93,45 @@ groups
   .attr("r", 8)
   .attr("class", "metascore")
 
+groups
+  .append("text")
+  .attr("x", (d, i) => {
+    if (d.difference > 0) {
+      return scoreScale(d.imdb + 5)
+    } else {
+      return scoreScale(d.imdb - 5)
+    }
+  })
+  .attr("y", 20)
+  .text((d, i) => { return d.imdb })
+  .attr("class", "imdb")
+  .style("text-anchor", (d, i) => {
+    if (d.difference > 0) {
+      return "start"
+    } else {
+      return "end"
+    }
+  })
 
+groups
+  .append("text")
+  .attr("x", (d, i) => {
+    if (d.difference > 0) {
+      return scoreScale(d.metascore - 9)
+    } else {
+      return scoreScale(d.metascore + 9)
+    }
+  })
+  .attr("y", 20)
+  .text((d, i) => { return d.metascore })
+  .attr("class", "metascore")
+  .style("text-anchor", (d, i) => {
+    if (d.difference > 0) {
+      return "start"
+    } else {
+      return "end"
+    }
+  })
 
 const selectTag = document.querySelector("select")
 
