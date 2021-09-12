@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <header>
+      <h1>Movie Critic</h1>
+      <form>
+        <span class="imdb">IMDB</span>
+        <span class="metascore">Metascore</span>
+        <select>
+          <option>IMDB score</option>
+          <option>Metacritic score</option>
+          <option>Difference</option>
+          <option>Year</option>
+          <option>Title A - Z</option>
+        </select>
+      </form>
+    </header>
+
+    <svg></svg>
+
+  </body>
+  <script src="javascripts/d3.min.js"></script>
+  <script src="javascripts/data.js"></script>
+  <script src="javascripts/movies.js"></script>
+</html>
