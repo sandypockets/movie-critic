@@ -53,6 +53,15 @@ groups
   .attr("r", 8)
   .attr("class", "metascore")
 
+const imdbLine = d3.line()
+  .x((d, i) => { return scoreScale(d.imdb) })
+  .y((d, i) => { return 40 * i + 20 })
+
+const imdbPath = svg
+  .append("path")
+  .datum(data)
+  .attr("d", imdbLine)
+  .attr("class", "imdb")
 
 
 const selectTag = document.querySelector("select")

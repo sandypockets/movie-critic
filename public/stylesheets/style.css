@@ -67,3 +67,9 @@ rect.background {
 g.movie:hover rect.background {
   opacity: 1;
 }
+
+path.imdb {
+  fill: none;
+  stroke: var(--imdb);
+  stroke-width: 5px;
+}
