@@ -43,3 +43,18 @@ groups
   .attr("cy", 20)
   .attr("r", 8)
   .attr("class", "metascore")
+
+
+
+const selectTag = document.querySelector("select")
+
+selectTag.addEventListener("change", function() {
+  data.sort((a, b) => {
+    return d3.descending(a[selectTag.value], b[selectTag.value])
+  })
+  groups
+    .data(data, (d, i) => { return d.title })
+    .transition()
+    .duration(1000)
+    .attr("transform", (d, i) => { return `translate(0, ${i * 40})`})
+})
