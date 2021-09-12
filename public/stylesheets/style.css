@@ -13,6 +13,19 @@ body {
   font: 18px "Space Mono", Helvetica, Arial, sans-serif;
   color: var(--text-color);
   background-color: var(--background);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+main > div {
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -23,7 +36,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px;
+  padding: 24px 36px;
   border-bottom: 3px solid var(--text-color);
   background-color: var(--background);
   position: sticky;
