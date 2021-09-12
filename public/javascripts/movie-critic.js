@@ -1,5 +1,10 @@
 const svg = d3.select("svg")
 
+data = data.map((d, i) => {
+  d.difference = d.imdb - d.metascore
+  return d
+})
+
 svg
   .attr("height", 40 * data.length)
   .attr("width", 960)
