@@ -45,3 +45,15 @@ span.metascore {
 text {
   dominant-baseline: middle;
 }
+
+text.title {
+  font-weight: 700;
+}
+
+circle.imdb {
+  fill: var(--imdb);
+}
+
+circle.metascore {
+  fill: var(--metascore);
+}

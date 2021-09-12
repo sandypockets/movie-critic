@@ -4,6 +4,10 @@ svg
   .attr("height", 40 * data.length)
   .attr("width", 960)
 
+const scoreScale = d3.scaleLinear()
+  .domain([0, 100])
+  .range([420, 900])
+
 const groups = svg
   .selectAll("g.movie")
   .data(data)
@@ -25,3 +29,17 @@ groups
   .attr("y", 20)
   .attr("class", "year")
   .text((d, i) => { return d.year } )
+
+groups
+  .append("circle")
+  .attr("cx", (d, i) => { return scoreScale(d.imdb) })
+  .attr("cy", 20)
+  .attr("r", 8)
+  .attr("class", "imdb")
+
+groups
+  .append("circle")
+  .attr("cx", (d, i) => { return scoreScale(d.metascore) })
+  .attr("cy", 20)
+  .attr("r", 8)
+  .attr("class", "metascore")
