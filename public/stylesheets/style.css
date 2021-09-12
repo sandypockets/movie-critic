@@ -79,3 +79,7 @@ path.metascore {
   stroke: var(--metascore);
   stroke-width: 5px;
 }
+
+path.area {
+  fill: var(--highlight);
+}
