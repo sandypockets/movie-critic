@@ -73,3 +73,9 @@ path.imdb {
   stroke: var(--imdb);
   stroke-width: 5px;
 }
+
+path.metascore {
+  fill: none;
+  stroke: var(--metascore);
+  stroke-width: 5px;
+}

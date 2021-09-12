@@ -63,6 +63,16 @@ const imdbPath = svg
   .attr("d", imdbLine)
   .attr("class", "imdb")
 
+const metascoreLine = d3.line()
+  .x((d, i) => { return scoreScale(d.metascore) })
+  .y((d, i) => { return 40 * i + 20 })
+
+const metascorePath = svg
+  .append("path")
+  .datum(data)
+  .attr("d", metascoreLine)
+  .attr("class", "metascore")
+
 
 const selectTag = document.querySelector("select")
 
