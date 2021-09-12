@@ -57,3 +57,13 @@ circle.imdb {
 circle.metascore {
   fill: var(--metascore);
 }
+
+rect.background {
+  fill: var(--highlight);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+g.movie:hover rect.background {
+  opacity: 1;
+}

@@ -16,6 +16,15 @@ const groups = svg
   .attr("class", "movie")
   .attr("transform", (d, i) => { return `translate(0, ${i * 40})`})
 
+
+groups
+  .append("rect")
+  .attr("x", 0)
+  .attr("y", 0)
+  .attr("height", 40)
+  .attr("width", 960)
+  .attr("class", "background")
+
 groups
   .append("text")
   .attr("x", 90)
@@ -50,7 +59,11 @@ const selectTag = document.querySelector("select")
 
 selectTag.addEventListener("change", function() {
   data.sort((a, b) => {
-    return d3.descending(a[selectTag.value], b[selectTag.value])
+    if (selectTag.value === 'title') {
+      return d3.ascending(a[selectTag.value], b[selectTag.value])
+    } else {
+      return d3.descending(a[selectTag.value], b[selectTag.value])
+    }
   })
   groups
     .data(data, (d, i) => { return d.title })
