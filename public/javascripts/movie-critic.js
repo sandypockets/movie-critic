@@ -11,6 +11,7 @@ const scoreScale = d3.scaleLinear()
 const imdbLine = d3.line()
   .x((d, i) => { return scoreScale(d.imdb) })
   .y((d, i) => { return 40 * i + 20 })
+  .curve(d3.curveCardinal.tension(0.25))
 
 const imdbPath = svg
   .append("path")
@@ -21,6 +22,7 @@ const imdbPath = svg
 const metascoreLine = d3.line()
   .x((d, i) => { return scoreScale(d.metascore) })
   .y((d, i) => { return 40 * i + 20 })
+  .curve(d3.curveCardinal.tension(0.25))
 
 const metascorePath = svg
   .append("path")
